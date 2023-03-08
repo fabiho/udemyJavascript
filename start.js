@@ -1,14 +1,9 @@
 "use strict"
 
-const students = ["Max","Erika","Monika"]
+let sum = 0 
+const shoppingList = [123, 23, 1123]
 
-for (let i = 1; i <= 12; i++) {
-    if (i === 7) {
-        continue
-    }
-
-    console.log("i: " + i)
+for(const shoppingItem of shoppingList) {
+    sum = sum + shoppingItem
+console.log("Summe: " + sum)
 }
-
-
-
