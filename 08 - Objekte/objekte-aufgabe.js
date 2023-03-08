@@ -49,9 +49,18 @@ const LANGUAGE_EN = [
   "and"
 ]
 
+// Schreibe deinen Code hier, der das Objekt "DE_TO_EN" befüllt!
+
 let DE_TO_EN = {}
 
-// Schreibe deinen Code hier, der das Objekt "DE_TO_EN" befüllt!
+for(const i in LANGUAGE_DE) {
+  const wordDE = LANGUAGE_DE[i]
+  const wordEN = LANGUAGE_EN[i]
+
+  DE_TO_EN[wordDE] = wordEN
+}
+
+console.log(DE_TO_EN["hallo"]) // Gibt "hello" aus!
 
 // Aufgabe 2
 // 
@@ -70,11 +79,28 @@ const students = [
 //     Der Chef beauftragt uns / dich, das durchschnittliche Alter
 //     der Teilnehmer zu berechnen. Diese Berechnung soll natürlich
 //     mit Hilfe von JavaScript-Code durchgeführt werden!
+
+function averageAge() {
+  let sum = 0
+  for(const student of students) {
+    sum = sum + student.age
+  }
+  averageAge = sum / students.length
+
+  return averageAge
+}
+
+console.log(averageAge())
+
 // 
 // 2b) Füge einen neuen Teilnehmer mit dem Namen "Christian Schmidt"
 //     hinzu. Lasse bei diesem Teilnehmer die Eigenschaft "age" weg - 
 //     wir wissen das Alter noch nicht. 
 // 
+
+students.push({firstname:"Alfred", lastname: "Gramelt"})
+console.log(students)
+
 // 2c) Funktioniert der Code aus Teilaufgabe 2a) noch, auch wenn er
 //     auf der jetzt aktualisierten Teilnehmerliste ausgeführt wird?
 //     Wenn nicht, passe den Code so an, dass er damit klarkommt,
@@ -88,3 +114,18 @@ const students = [
 //         mehr korrekt durch!
 // 
 
+function averageAge2() {
+  let sum = 0
+  let studentsWithAge = 0
+  for(const student of students) {
+    if(student.age) {
+      sum = sum + student.age
+      studentsWithAge++
+    }
+  }
+  averageAge = sum / studentsWithAge
+
+  return averageAge
+}
+
+console.log(averageAge2())

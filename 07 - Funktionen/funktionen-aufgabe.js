@@ -28,8 +28,19 @@ const courses = [
 //                       wenigsten Teilnehmer hat
 
 function getSmallestCourse() {
-  // Ergänze den Code hier! Du darfst die Variable "courses"
-  // von außerhalt hier drinnen weiterverwenden!
+  let smallestCourse = -1
+  let smallestIndex = -1
+
+  for (let i in courses) {
+    let course = courses[i]
+
+    if (smallestIndex === -1 || course.length < smallestCourse) {
+      smallestIndex = i
+      smallestCourse = course.length
+    }
+  }
+
+  return smallestIndex
 }
 
 // 1b) Ergänze die Funktion, die einen Teilnehmer in den Kurs
@@ -37,12 +48,12 @@ function getSmallestCourse() {
 //     Wir nutzen hier das Ergebnis aus Teilaufgabe 1a weiter!
 
 function addStudent(name) {
-  // Hier ermitteln wir, welcher Kurs bisher am wenigsten
-  // Teilnehmer hat!
   const smallestCourse = getSmallestCourse()
-
-  // Ergänze den Code hier!
+  courses[smallestCourse].push(name)
 }
+
+addStudent("Willi")
+console.log(courses)
 
 
 // Aufgabe 2
@@ -99,8 +110,20 @@ const LANGUAGE_EN = [
 //     >> translateWord("Sprachkurs")
 //     >> // Rückgabewert: "language course"
 function translateWord(word) {
+  word = word.toLowerCase()
 
+  for (const i in LANGUAGE_DE) {
+    const currentWord = LANGUAGE_DE[i]
+
+    if (currentWord === word) {
+      return LANGUAGE_EN[i]
+    }
+  }
+
+  return word
 }
+
+console.log(translateWord("Sprachkurs"))
 
 // 2b) Schreibe eine Funktion, die den ersten Buchstaben eines
 //     Wortes in Großbuchstaben umwandeln kann.
@@ -121,7 +144,10 @@ function translateWord(word) {
 //     Das Ergebnis soll per "return" zurückgegeben werden
 
 function ucFirst(word) {
-
+  const firstLetter = word[0]
+  const rest = word.slice(1)
+  
+  return firstLetter.toUpperCase() + rest
 }
 
 // 2c) Aufbauend den Funktionen aus 2a und 2b, entwickle eine weitere
@@ -147,5 +173,5 @@ function ucFirst(word) {
 //      C++ oder Python entwickeln als in JavaScript.
 
 function translateSentence(sentence) {
-
+  
 }

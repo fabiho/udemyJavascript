@@ -1,9 +1,12 @@
 "use strict"
 
-let sum = 0 
-const shoppingList = [123, 23, 1123]
+const students = [
+    {firstname: "Fabian",name: "hofer", age: 29},
+    {firstname: "Erika", name: "Schmitt", age: 55}
+]
 
-for(const shoppingItem of shoppingList) {
-    sum = sum + shoppingItem
-console.log("Summe: " + sum)
+for(const student of students) {
+    console.log("student: ", student)
 }
+
+

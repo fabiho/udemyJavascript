@@ -27,6 +27,10 @@ const courses = [
 //      >> Rückgabewert: 0, weil der 1. Kurs (Kurs mit Index 0) am 
 //                       wenigsten Teilnehmer hat
 
+/**
+ * Gibt den Index des Kurses zurück mit den wenigsten Teilnehmern
+ * @returns 
+ */
 function getSmallestCourse() {
   // Ergänze den Code hier! Du darfst die Variable "courses"
   // von außerhalt hier drinnen weiterverwenden!
