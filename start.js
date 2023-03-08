@@ -1,12 +1,9 @@
 "use strict"
 
-const students = [
-    {firstname: "Fabian",name: "hofer", age: 29},
-    {firstname: "Erika", name: "Schmitt", age: 55}
-]
+const fs = require("fs")
+const data = fs.readFileSync("data.json", {encoding: "utf-8"})
 
-for(const student of students) {
-    console.log("student: ", student)
-}
+console.log("data:", data)
+console.log("typeof data:", typeof data)
 
 

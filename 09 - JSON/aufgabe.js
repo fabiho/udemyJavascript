@@ -16,6 +16,9 @@ console.log("Anzahl launches:", launches.length)
 // 
 // 1) Wie viele Raketen hat SpaceX im Jahr 2018 gestartet?
 //    1a) Wie viele davon erfolgreich
+
+
+
 //    1b) Wie viele davon nicht erfolgreich?
 // 
 //    Hinweis: Schau' dir dazu die Eigenschaften "launch_year" und
@@ -26,6 +29,9 @@ console.log("Anzahl launches:", launches.length)
 //    entwickelt sein, dass überprüft wird, ob der Startvorgang erfolgreich
 //    war oder nicht! 
 //
+
+
+
 // 2) Wie viele kg Nutzlast wurden im Jahr 2018 *erfolgreich* ins Weltall 
 //    gestartet?
 //
